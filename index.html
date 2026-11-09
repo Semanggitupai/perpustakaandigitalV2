@@ -45,7 +45,6 @@
             background-size: 24px 24px;
         }
 
-        /* Subtle Floating Animation for Broomstick Kiki */
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-10px) rotate(1deg); }
@@ -55,16 +54,6 @@
             animation: float 4s ease-in-out infinite;
         }
 
-        @keyframes pulse-soft {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .animate-pulse-soft {
-            animation: pulse-soft 3s ease-in-out infinite;
-        }
-
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -86,11 +75,9 @@
     <header class="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b-2 border-amber-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo Brand -->
             <div class="flex items-center space-x-3 cursor-pointer" onclick="filterCategory('all')">
                 <div class="w-12 h-12 rounded-full bg-rose-600 text-white flex items-center justify-center shadow-md text-xl relative group">
                     <i class="fa-solid font-bold fa-broom transition-transform group-hover:rotate-12"></i>
-                    <!-- Little Jiji Silhouette badge -->
                     <span class="absolute -bottom-1 -right-1 bg-slate-900 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-white" title="Jiji is here!">
                         <i class="fa-solid fa-cat"></i>
                     </span>
@@ -99,11 +86,10 @@
                     <h1 class="font-serif font-bold text-xl sm:text-2xl text-slate-900 tracking-tight flex items-center gap-2">
                         Kiki's Flying Library
                     </h1>
-                    <p class="text-xs text-amber-800 font-medium tracking-wide">Pengiriman Ilmu & Cerita Hangat 🧹✨</p>
+                    <p class="text-xs text-amber-800 font-medium tracking-wide">Pengiriman Novel & Buku Berkebun 🧹✨</p>
                 </div>
             </div>
 
-            <!-- Action Buttons -->
             <div class="flex items-center space-x-3 sm:space-x-4">
                 <button onclick="toggleBorrowedDrawer()" class="relative bg-amber-100 hover:bg-amber-200 text-amber-900 px-3 sm:px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 flex items-center gap-2 border border-amber-300">
                     <i class="fa-solid fa-bag-shopping text-rose-600"></i>
@@ -117,11 +103,10 @@
     <!-- Main Content Container -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-        <!-- Hero Banner - Cozy Cottage & Broomstick Vibe -->
+        <!-- Hero Banner -->
         <section class="relative rounded-3xl bg-gradient-to-r from-amber-900 via-rose-950 to-slate-900 text-white p-6 sm:p-10 lg:p-12 mb-10 overflow-hidden shadow-xl border-4 border-amber-200/40">
-            <!-- Background Decorative SVGs -->
             <div class="absolute -right-10 -bottom-10 opacity-15 pointer-events-none">
-                <i class="fa-solid fa-bread-slice text-[240px] text-amber-300"></i>
+                <i class="fa-solid fa-seedling text-[240px] text-amber-300"></i>
             </div>
             <div class="absolute right-1/4 top-4 opacity-10 pointer-events-none">
                 <i class="fa-solid fa-cloud text-[180px] text-white"></i>
@@ -129,18 +114,18 @@
 
             <div class="relative z-10 max-w-2xl">
                 <div class="inline-flex items-center gap-2 bg-rose-500/30 text-rose-200 border border-rose-400/40 px-3 py-1 rounded-full text-xs font-semibold mb-4 backdrop-blur-sm">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i> Layanan Peminjaman Buku Terbang Koriko
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Koleksi Novel & Buku Gardening Koriko
                 </div>
                 <h2 class="font-serif text-3xl sm:text-5xl font-bold leading-tight mb-4 text-amber-100">
-                    Bawa Pulang Kisah Penuh Keajaiban Hari Ini!
+                    Bawa Pulang Novel Menarik & Panduan Berkebun Hijau!
                 </h2>
                 <p class="text-amber-100/90 text-sm sm:text-base mb-6 leading-relaxed">
-                    "Seperti Kiki dan Jiji yang terbang membelah angin kota Koriko, temukan buku kegemaranmu dan biarkan imajinasimu terbang tinggi!"
+                    "Nikmati kisah fiksi penuh keajaiban atau pelajari cara merawat tanaman pekarangan bersama Kiki dan Jiji."
                 </p>
 
                 <!-- Search Input Bar -->
                 <div class="relative max-w-lg">
-                    <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Cari judul buku, penulis, atau kata kunci..." 
+                    <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Cari judul buku, penulis, atau topik..." 
                            class="w-full pl-12 pr-10 py-3.5 rounded-2xl bg-white text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:ring-4 focus:ring-rose-400 shadow-lg border-2 border-amber-300">
                     <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-base"></i>
                     <button onclick="clearSearch()" id="clear-btn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1">
@@ -149,14 +134,13 @@
                 </div>
             </div>
 
-            <!-- Floating Kiki Graphic Icon / Badge -->
             <div class="hidden md:flex absolute right-12 bottom-8 items-center justify-center animate-float">
                 <div class="bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-2xl text-center max-w-[200px] shadow-2xl">
                     <div class="w-16 h-16 bg-rose-600 rounded-full mx-auto flex items-center justify-center text-3xl text-amber-200 shadow-inner mb-2">
                         <i class="fa-solid fa-cat"></i>
                     </div>
-                    <p class="text-xs font-semibold text-amber-200">"Jiji Menyukai Buku Ini!"</p>
-                    <span class="text-[10px] text-amber-300/80 block mt-1">Rekomendasi Hari Ini</span>
+                    <p class="text-xs font-semibold text-amber-200">"Jiji Suka Halaman Hijau!"</p>
+                    <span class="text-[10px] text-amber-300/80 block mt-1">Rekomendasi Spesial</span>
                 </div>
             </div>
         </section>
@@ -165,7 +149,7 @@
         <section class="mb-8">
             <div class="flex items-center justify-between mb-4">
                 <h3 class="font-serif text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <i class="fa-solid fa-compass text-rose-600"></i> Kategori Koleksi Buku
+                    <i class="fa-solid fa-compass text-rose-600"></i> Kategori Koleksi
                 </h3>
                 <span id="book-count" class="text-xs text-amber-800 font-medium bg-amber-100 px-3 py-1 rounded-full border border-amber-200">
                     Menampilkan seluruh buku
@@ -173,14 +157,14 @@
             </div>
             
             <div class="flex items-center gap-2 overflow-x-auto pb-3 pt-1 scrollbar-none" id="category-container">
-                <!-- Categories will be dynamically updated with active states -->
+                <!-- Rendered by JS -->
             </div>
         </section>
 
         <!-- Book Cards Grid -->
         <section>
             <div id="books-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Cards render via JavaScript -->
+                <!-- Rendered by JS -->
             </div>
 
             <!-- Empty State -->
@@ -190,7 +174,7 @@
                 </div>
                 <h4 class="font-serif text-xl font-bold text-slate-800 mb-1">Maaf, Buku Tidak Ditemukan!</h4>
                 <p class="text-slate-500 text-sm max-w-md mx-auto mb-4">
-                    Jiji sudah menggeledah seluruh rak, tapi tidak ada buku yang cocok dengan pencarianmu.
+                    Jiji sudah mencari di rak Novel dan Gardening, tapi buku yang kamu cari belum tersedia.
                 </p>
                 <button onclick="resetFilters()" class="bg-rose-600 hover:bg-rose-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all">
                     Tampilkan Semua Buku
@@ -203,24 +187,19 @@
     <div id="book-modal" class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border-4 border-amber-200 transform scale-95 transition-transform duration-300 relative" id="modal-card">
             
-            <!-- Close Modal Button -->
             <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-9 h-9 bg-slate-100 hover:bg-rose-100 text-slate-600 hover:text-rose-600 rounded-full flex items-center justify-center transition-colors">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
             <div class="p-6 sm:p-8 flex flex-col sm:flex-row gap-6">
-                <!-- Book Cover Side -->
                 <div class="w-full sm:w-1/2 flex flex-col items-center">
                     <div class="relative w-48 h-68 sm:w-full sm:h-72 rounded-2xl overflow-hidden shadow-md border-2 border-amber-100 mb-3">
                         <img id="modal-cover" src="" alt="Book Cover" class="w-full h-full object-cover">
                         <span id="modal-category" class="absolute top-3 left-3 bg-rose-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow"></span>
                     </div>
-                    <div id="modal-rating" class="flex items-center gap-1 text-amber-500 text-sm">
-                        <!-- Rating stars dynamic -->
-                    </div>
+                    <div id="modal-rating" class="flex items-center gap-1 text-amber-500 text-sm"></div>
                 </div>
 
-                <!-- Book Details Side -->
                 <div class="w-full sm:w-1/2 flex flex-col justify-between">
                     <div>
                         <h3 id="modal-title" class="font-serif text-2xl font-bold text-slate-900 leading-tight mb-1"></h3>
@@ -234,11 +213,10 @@
                             </div>
                         </div>
 
-                        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-400 mb-1">Ringkasan cerita</h4>
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-400 mb-1">Ringkasan isi</h4>
                         <p id="modal-summary" class="text-slate-600 text-sm leading-relaxed mb-6"></p>
                     </div>
 
-                    <!-- Action Button inside Modal -->
                     <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
                         <div id="modal-status-badge"></div>
                         <button id="modal-borrow-btn" onclick="" class="flex-grow bg-rose-600 hover:bg-rose-700 text-white py-3 px-4 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
@@ -250,7 +228,7 @@
         </div>
     </div>
 
-    <!-- Drawer Tas Peminjaman (Side Panel) -->
+    <!-- Drawer Tas Peminjaman -->
     <div id="borrowed-drawer" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-amber-50 shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 border-l-4 border-amber-300" id="drawer-panel">
             <div>
@@ -264,11 +242,9 @@
                     </button>
                 </div>
 
-                <p class="text-xs text-amber-800 mb-4">Daftar buku yang disiapkan Kiki untuk diantar dengan sapu terbangnya:</p>
+                <p class="text-xs text-amber-800 mb-4">Daftar novel dan buku gardening yang siap diantar ke rumahmu:</p>
 
-                <div id="borrowed-items-list" class="space-y-3 max-h-[60vh] overflow-y-auto pr-1">
-                    <!-- Items inserted dynamically -->
-                </div>
+                <div id="borrowed-items-list" class="space-y-3 max-h-[60vh] overflow-y-auto pr-1"></div>
             </div>
 
             <div class="border-t border-amber-200 pt-4 bg-amber-50">
@@ -279,486 +255,3 @@
                 <button onclick="confirmCheckout()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2">
                     <i class="fa-solid fa-paper-plane text-amber-300"></i> Konfirmasi Pengiriman Terbang
                 </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Notification System -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-amber-300/40">
-        <div id="toast-icon" class="text-amber-400 text-lg">
-            <i class="fa-solid fa-circle-check"></i>
-        </div>
-        <span id="toast-message" class="text-sm font-medium">Notifikasi</span>
-    </div>
-
-    <!-- Footer Studio Ghibli Theme -->
-    <footer class="bg-slate-900 text-amber-100/80 border-t-4 border-amber-400 mt-16 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-rose-600 text-white flex items-center justify-center text-lg">
-                    <i class="fa-solid fa-broom"></i>
-                </div>
-                <div>
-                    <h4 class="font-serif font-bold text-lg text-white">Kiki's Flying Library</h4>
-                    <p class="text-xs text-amber-200/70">Inspirasi dari Dunia Studio Ghibli & Film Kiki's Delivery Service</p>
-                </div>
-            </div>
-            <div class="text-xs text-center sm:text-right text-amber-200/60 leading-relaxed">
-                <p>© 2026 Perpustakaan Digital Koriko. Dibuat dengan cinta & keajaiban.</p>
-                <p class="mt-1">"We each need to find our own inspiration, Kiki." - Ursula</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript Data & Logic -->
-    <script>
-        // Data Buku Tema Kiki's Delivery Service & Ghibli World
-        const booksData = [
-            {
-                id: 1,
-                title: "Resep Rahasia Roti Gütiokanjö",
-                author: "Osono & Fukuo",
-                category: "Cooking & Bakery",
-                categoryKey: "bakery",
-                rating: 4.9,
-                reviews: 128,
-                available: true,
-                cover: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
-                summary: "Buku panduan memanggang roti hangat khas toko Osono di Koriko. Berisi teknik adonan lembut, aroma kayu manis yang harum, serta rahasia memanggang dengan senyuman hangat setiap pagi."
-            },
-            {
-                id: 2,
-                title: "Seni Terbang & Navigasi Sapu",
-                author: "Kiki Sang Penyihir Cilik",
-                category: "Witchcraft & Folklore",
-                categoryKey: "magic",
-                rating: 5.0,
-                reviews: 210,
-                available: true,
-                cover: "https://images.unsplash.com/photo-1514539079130-25950c84af65?auto=format&fit=crop&w=600&q=80",
-                summary: "Catatan petualangan Kiki menguasai ilmu terbang sapu warisan ibunya. Pelajari cara membaca arah angin laut Koriko, menjaga keseimbangan saat cuaca buruk, serta merawat ijuk sapu berbahan murni."
-            },
-            {
-                id: 3,
-                title: "Bahasa Kucing & Rahasia Jiji",
-                author: "Jiji si Kucing Hitam",
-                category: "Cozy Tales",
-                categoryKey: "cozy",
-                rating: 4.8,
-                reviews: 95,
-                available: true,
-                cover: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80",
-                summary: "Kumpulan sindiran lucu, panduan memahami bahasa tubuh kucing hitam, serta kisah persahabatan manis antara Jiji dan Lily. Lengkap dengan tips menikmati secangkir susu hangat."
-            },
-            {
-                id: 4,
-                title: "Petualangan Ornitopter Tombo",
-                author: "Tombo Kopoli",
-                category: "Adventure",
-                categoryKey: "adventure",
-                rating: 4.7,
-                reviews: 84,
-                available: true,
-                cover: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&q=80",
-                summary: "Eksperimen penerbangan mekanis bertenaga kayuhan sepeda! Tombo membagikan sketsa rancangan mesin terbangnya, impian menembus awan, dan kekagumannya pada keajaiban langit."
-            },
-            {
-                id: 5,
-                title: "Lukisan Gagak di Hutan Pegunungan",
-                author: "Ursula Sang Pelukis",
-                category: "Magic & Fantasy",
-                categoryKey: "fantasy",
-                rating: 4.9,
-                reviews: 142,
-                available: false,
-                cover: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80",
-                summary: "Sebuah perenungan mendalam tentang bagaimana menemukan kembali inspirasi seni yang hilang. Ursula menceritakan kehidupannya yang tenang di pondok kayu bersama kawanan gagak."
-            },
-            {
-                id: 6,
-                title: "Pesta Kue Ulang Tahun Nenek",
-                author: "Nenek Koriko & Kiki",
-                category: "Cooking & Bakery",
-                categoryKey: "bakery",
-                rating: 4.8,
-                reviews: 76,
-                available: true,
-                cover: "https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=600&q=80",
-                summary: "Kisah di balik pembuatan pie ikan dan labu dalam tungku kayu tua saat hujan deras. Menghangatkan hati dan mengajarkan tentang keikhlasan serta ketulusan memberi hadiah."
-            },
-            {
-                id: 7,
-                title: "Katalog Jam Menara Kota Pantai",
-                author: "Penjaga Menara Koriko",
-                category: "Adventure",
-                categoryKey: "adventure",
-                rating: 4.5,
-                reviews: 52,
-                available: true,
-                cover: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80",
-                summary: "Sejarah menara jam megah yang berdiri di tepi laut Koriko. Berisi mekanisme roda gigi kuno, jadwal dentang jam, dan pemandangan terbaik seluruh kota dari puncak tertinggi."
-            },
-            {
-                id: 8,
-                title: "Ramuan Herbal & Herbalisme Cilik",
-                author: "Kokiri (Ibu Kiki)",
-                category: "Witchcraft & Folklore",
-                categoryKey: "magic",
-                rating: 4.9,
-                reviews: 165,
-                available: true,
-                cover: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80",
-                summary: "Panduan memetik tanaman obat herbal, racikan obat flu alami, dan tradisi penyihir desa dalam memelihara keseimbangan alam di sekitar rumah kuali hangat."
-            }
-        ];
-
-        // Categories List
-        const categories = [
-            { id: 'all', label: 'Semua Koleksi', icon: 'fa-layer-group' },
-            { id: 'magic', label: 'Magic & Witchcraft', icon: 'fa-wand-sparkles' },
-            { id: 'bakery', label: 'Cooking & Bakery', icon: 'fa-wheat-awn' },
-            { id: 'adventure', label: 'Adventure', icon: 'fa-compass' },
-            { id: 'fantasy', label: 'Magic & Fantasy', icon: 'fa-feather' },
-            { id: 'cozy', label: 'Cozy Tales', icon: 'fa-mug-hot' }
-        ];
-
-        // State Management
-        let activeCategory = 'all';
-        let searchQuery = '';
-        let borrowedBookIds = [];
-        let selectedBookForModal = null;
-
-        // Initialize App
-        window.addEventListener('DOMContentLoaded', () => {
-            renderCategories();
-            renderBooks();
-        });
-
-        // Render Category Filter Buttons
-        function renderCategories() {
-            const container = document.getElementById('category-container');
-            container.innerHTML = categories.map(cat => {
-                const isActive = activeCategory === cat.id;
-                return `
-                    <button onclick="filterCategory('${cat.id}')" 
-                        class="px-4 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-200 flex items-center gap-2 border ${
-                            isActive 
-                            ? 'bg-rose-600 text-white border-rose-600 shadow-md transform scale-105' 
-                            : 'bg-white text-slate-700 border-amber-200 hover:bg-amber-100 hover:text-amber-900'
-                        }">
-                        <i class="fa-solid ${cat.icon}"></i>
-                        ${cat.label}
-                    </button>
-                `;
-            }).join('');
-        }
-
-        // Filter Function
-        function filterCategory(catId) {
-            activeCategory = catId;
-            renderCategories();
-            renderBooks();
-        }
-
-        // Search Functionality
-        function handleSearch() {
-            const input = document.getElementById('search-input');
-            const clearBtn = document.getElementById('clear-btn');
-            searchQuery = input.value.toLowerCase().trim();
-
-            if (searchQuery.length > 0) {
-                clearBtn.classList.remove('hidden');
-            } else {
-                clearBtn.classList.add('hidden');
-            }
-
-            renderBooks();
-        }
-
-        function clearSearch() {
-            document.getElementById('search-input').value = '';
-            searchQuery = '';
-            document.getElementById('clear-btn').classList.add('hidden');
-            renderBooks();
-        }
-
-        function resetFilters() {
-            activeCategory = 'all';
-            clearSearch();
-            renderCategories();
-        }
-
-        // Render Books Grid
-        function renderBooks() {
-            const grid = document.getElementById('books-grid');
-            const emptyState = document.getElementById('empty-state');
-            const countLabel = document.getElementById('book-count');
-
-            // Filter logic
-            const filteredBooks = booksData.filter(book => {
-                const matchesCategory = activeCategory === 'all' || book.categoryKey === activeCategory;
-                const matchesSearch = book.title.toLowerCase().includes(searchQuery) ||
-                                      book.author.toLowerCase().includes(searchQuery) ||
-                                      book.category.toLowerCase().includes(searchQuery);
-                return matchesCategory && matchesSearch;
-            });
-
-            // Update counter badge
-            countLabel.textContent = `Menampilkan ${filteredBooks.length} dari ${booksData.length} buku`;
-
-            if (filteredBooks.length === 0) {
-                grid.innerHTML = '';
-                emptyState.classList.remove('hidden');
-                return;
-            }
-
-            emptyState.classList.add('hidden');
-
-            grid.innerHTML = filteredBooks.map(book => {
-                const isBorrowed = borrowedBookIds.includes(book.id);
-                
-                return `
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-amber-100 flex flex-col justify-between group hover:-translate-y-1">
-                        <div>
-                            <!-- Cover Image Container -->
-                            <div class="relative h-56 overflow-hidden bg-amber-50 cursor-pointer" onclick="openModal(${book.id})">
-                                <img src="${book.cover}" alt="${book.title}" 
-                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                     onerror="this.src='https://placehold.co/400x500/fde68a/78350f?text=Kiki+Library'">
-                                
-                                <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-amber-900 text-[11px] font-bold px-3 py-1 rounded-full border border-amber-200 shadow-sm">
-                                    ${book.category}
-                                </span>
-
-                                ${!book.available ? `
-                                    <span class="absolute top-3 right-3 bg-slate-900/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
-                                        Dipinjam Orang
-                                    </span>
-                                ` : ''}
-                            </div>
-
-                            <!-- Card Body -->
-                            <div class="p-5">
-                                <div class="flex items-center gap-1 text-amber-500 text-xs mb-1">
-                                    <i class="fa-solid fa-star"></i>
-                                    <span class="font-bold text-slate-700">${book.rating}</span>
-                                    <span class="text-slate-400">(${book.reviews})</span>
-                                </div>
-
-                                <h4 class="font-serif font-bold text-lg text-slate-900 group-hover:text-rose-600 transition-colors line-clamp-1 cursor-pointer" onclick="openModal(${book.id})">
-                                    ${book.title}
-                                </h4>
-                                <p class="text-xs text-rose-600 font-medium mb-3">Oleh: ${book.author}</p>
-                                <p class="text-slate-600 text-xs line-clamp-2 leading-relaxed mb-4">${book.summary}</p>
-                            </div>
-                        </div>
-
-                        <!-- Card Footer -->
-                        <div class="px-5 pb-5 pt-0 flex items-center justify-between gap-2">
-                            <button onclick="openModal(${book.id})" class="text-xs font-bold text-slate-500 hover:text-slate-800 underline underline-offset-2">
-                                Detail
-                            </button>
-
-                            <button onclick="toggleBorrow(${book.id})" 
-                                    ${!book.available && !isBorrowed ? 'disabled' : ''}
-                                    class="px-3.5 py-2 rounded-xl text-xs font-bold transition-all duration-200 flex items-center gap-1.5 shadow-sm ${
-                                        isBorrowed 
-                                        ? 'bg-amber-200 text-amber-900 hover:bg-amber-300' 
-                                        : !book.available 
-                                        ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                                        : 'bg-rose-600 hover:bg-rose-700 text-white shadow-rose-200'
-                                    }">
-                                <i class="fa-solid ${isBorrowed ? 'fa-check' : 'fa-broom'}"></i>
-                                <span>${isBorrowed ? 'Tersimpan' : !book.available ? 'Tidak Tersedia' : 'Pinjam'}</span>
-                            </button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        // Modal Functionality
-        function openModal(bookId) {
-            const book = booksData.find(b => b.id === bookId);
-            if (!book) return;
-
-            selectedBookForModal = book;
-            const isBorrowed = borrowedBookIds.includes(book.id);
-
-            document.getElementById('modal-cover').src = book.cover;
-            document.getElementById('modal-title').textContent = book.title;
-            document.getElementById('modal-author').textContent = `Penulis: ${book.author}`;
-            document.getElementById('modal-category').textContent = book.category;
-            document.getElementById('modal-summary').textContent = book.summary;
-
-            // Rating Stars
-            const starsContainer = document.getElementById('modal-rating');
-            starsContainer.innerHTML = `
-                <div class="flex text-amber-400">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
-                <span class="font-bold text-slate-800 ml-1 text-sm">${book.rating}</span>
-                <span class="text-slate-400 text-xs">(${book.reviews} Ulasan Pembaca Koriko)</span>
-            `;
-
-            // Status Badge & Button
-            const statusBadge = document.getElementById('modal-status-badge');
-            const modalBtn = document.getElementById('modal-borrow-btn');
-
-            if (!book.available && !isBorrowed) {
-                statusBadge.innerHTML = `<span class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1.5 rounded-full">Sedang Dipinjam Pembaca Lain</span>`;
-                modalBtn.disabled = true;
-                modalBtn.className = "flex-grow bg-slate-200 text-slate-400 py-3 px-4 rounded-xl font-bold text-sm cursor-not-allowed flex items-center justify-center gap-2";
-                modalBtn.innerHTML = `<i class="fa-solid fa-ban"></i> Tidak Tersedia Saat Ini`;
-            } else if (isBorrowed) {
-                statusBadge.innerHTML = `<span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1.5 rounded-full">Ada di Tas Peminjaman</span>`;
-                modalBtn.disabled = false;
-                modalBtn.className = "flex-grow bg-amber-200 hover:bg-amber-300 text-amber-900 py-3 px-4 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2";
-                modalBtn.innerHTML = `<i class="fa-solid fa-xmark"></i> Batal Pinjam Buku Ini`;
-                modalBtn.onclick = () => { toggleBorrow(book.id); closeModal(); };
-            } else {
-                statusBadge.innerHTML = `<span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1.5 rounded-full"><i class="fa-solid fa-circle-check"></i> Siap Diantar Kiki</span>`;
-                modalBtn.disabled = false;
-                modalBtn.className = "flex-grow bg-rose-600 hover:bg-rose-700 text-white py-3 px-4 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2";
-                modalBtn.innerHTML = `<i class="fa-solid fa-hand-holding-heart"></i> Pinjam Buku Ini Now`;
-                modalBtn.onclick = () => { toggleBorrow(book.id); closeModal(); };
-            }
-
-            // Show Modal with Animation
-            const modal = document.getElementById('book-modal');
-            const modalCard = document.getElementById('modal-card');
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modalCard.classList.remove('scale-95');
-            modalCard.classList.add('scale-100');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('book-modal');
-            const modalCard = document.getElementById('modal-card');
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            modalCard.classList.remove('scale-100');
-            modalCard.classList.add('scale-95');
-        }
-
-        // Toggle Borrow Book Logic
-        function toggleBorrow(bookId) {
-            const index = borrowedBookIds.indexOf(bookId);
-            const book = booksData.find(b => b.id === bookId);
-
-            if (index > -1) {
-                borrowedBookIds.splice(index, 1);
-                showToast(`"${book.title}" dikeluarkan dari tas peminjaman.`, 'info');
-            } else {
-                borrowedBookIds.push(bookId);
-                showToast(`"${book.title}" ditambahkan ke tas peminjaman Kiki! 🧹`, 'success');
-            }
-
-            updateBorrowBadge();
-            renderBooks();
-            renderBorrowedItems();
-        }
-
-        // Update Borrow Badge Count
-        function updateBorrowBadge() {
-            const badge = document.getElementById('borrow-count');
-            const drawerTotal = document.getElementById('drawer-total-count');
-            badge.textContent = borrowedBookIds.length;
-            drawerTotal.textContent = `${borrowedBookIds.length} Buku`;
-        }
-
-        // Borrow Drawer Functionality
-        function toggleBorrowedDrawer() {
-            const drawer = document.getElementById('borrowed-drawer');
-            const panel = document.getElementById('drawer-panel');
-
-            if (drawer.classList.contains('opacity-0')) {
-                renderBorrowedItems();
-                drawer.classList.remove('opacity-0', 'pointer-events-none');
-                panel.classList.remove('translate-x-full');
-            } else {
-                drawer.classList.add('opacity-0', 'pointer-events-none');
-                panel.classList.add('translate-x-full');
-            }
-        }
-
-        function renderBorrowedItems() {
-            const container = document.getElementById('borrowed-items-list');
-
-            if (borrowedBookIds.length === 0) {
-                container.innerHTML = `
-                    <div class="text-center py-10 text-slate-400">
-                        <i class="fa-solid fa-basket-shopping text-4xl mb-2 text-amber-300"></i>
-                        <p class="text-sm font-medium text-slate-600">Tas peminjamanmu masih kosong.</p>
-                        <p class="text-xs text-slate-400 mt-1">Pilih buku favoritmu agar Kiki bisa mengantarkannya!</p>
-                    </div>
-                `;
-                return;
-            }
-
-            const items = borrowedBookIds.map(id => booksData.find(b => b.id === id));
-            container.innerHTML = items.map(book => `
-                <div class="bg-white p-3 rounded-xl border border-amber-200 flex items-center justify-between shadow-sm">
-                    <div class="flex items-center gap-3">
-                        <img src="${book.cover}" alt="${book.title}" class="w-12 h-16 object-cover rounded-md border border-amber-100">
-                        <div>
-                            <h5 class="font-serif font-bold text-sm text-slate-800 line-clamp-1">${book.title}</h5>
-                            <p class="text-xs text-rose-600 font-medium">${book.author}</p>
-                            <span class="inline-block mt-1 bg-amber-100 text-amber-900 text-[10px] font-bold px-2 py-0.5 rounded-full">
-                                14 Hari Pinjam
-                            </span>
-                        </div>
-                    </div>
-                    <button onclick="toggleBorrow(${book.id})" class="text-slate-400 hover:text-rose-600 p-2 text-sm transition-colors" title="Hapus dari tas">
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                </div>
-            `).join('');
-        }
-
-        function confirmCheckout() {
-            if (borrowedBookIds.length === 0) {
-                showToast("Tas peminjamanmu masih kosong!", "warning");
-                return;
-            }
-
-            showToast("🧹 Pesanan diterima! Kiki sedang terbang mengantarkan bukumus!", "success");
-            borrowedBookIds = [];
-            updateBorrowBadge();
-            renderBooks();
-            renderBorrowedItems();
-            setTimeout(() => {
-                toggleBorrowedDrawer();
-            }, 1000);
-        }
-
-        // Toast Helper
-        function showToast(message, type = 'success') {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toast-message');
-            const toastIcon = document.getElementById('toast-icon');
-
-            toastMsg.textContent = message;
-
-            if (type === 'success') {
-                toastIcon.innerHTML = `<i class="fa-solid fa-circle-check text-rose-400"></i>`;
-            } else if (type === 'warning') {
-                toastIcon.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-amber-400"></i>`;
-            } else {
-                toastIcon.innerHTML = `<i class="fa-solid fa-circle-info text-sky-400"></i>`;
-            }
-
-            toast.classList.remove('opacity-0', 'translate-y-20');
-            toast.classList.add('opacity-100', 'translate-y-0');
-
-            setTimeout(() => {
-                toast.classList.remove('opacity-100', 'translate-y-0');
-                toast.classList.add('opacity-0', 'translate-y-20');
-            }, 3000);
-        }
-    </script>
-</body>
-</html>
